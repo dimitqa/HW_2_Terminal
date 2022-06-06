@@ -1,0 +1,61 @@
+1) Посмотреть где я
+pwd
+2) Создать папку
+mkdir hw1
+3) Зайти в папку
+cd hw1
+4) Создать 3 папки
+mkdir hw1sub1 hw1sub2 hw1sub3
+5) Зайти в любоую папку
+cd hw1sub1
+6) Создать 5 файлов (3 txt, 2 json)
+touch text1.txt text2.txt text3.txt json1.json json2.json
+7) Создать 3 папки
+mkdir hw1 hw2 hw3
+8. Вывести список содержимого папки
+ls -la
+9) + Открыть любой txt файл
+vim text1.txt
+10) + написать туда что-нибудь, любой текст.
+string
+11) + сохранить и выйти.
+esc + :wq
+12) Выйти из папки на уровень выше	
+cd ..
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+mv /hw1/hw1sub1/text1.txt /hw1/hw1sub2 
+mv /hw1/hw1sub1/text2.txt /hw1/hw1sub2"
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+cp /hw1/hw1sub2/text1.txt /hw1/hw1sub1
+cp /hw1/hw1sub2/text2.txt /hw1/hw1sub1
+15) Найти файл по имени	
+find -name text1.txt
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.	
+tail -f /hw1/hw1sub1/text2.txt | grep test
+17) вывести несколько первых строк из текстового файла
+head -3 /hw1/hw1sub1/text2.txt
+18) вывести несколько последних строк из текстового файла
+tail -3 /hw1/hw1sub1/text2.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+less ./hw1sub1/longtext.txt
+20) вывести дату и время
+date
+=========	
+1) Отправить http запрос на сервер http://162.55.220.72:5005/terminal-hw-request
+curl http://162.55.220.72:5005/terminal-hw-request
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13	
+
+#!/bin/bash
+mkdir hwscript
+cd hwscript
+mkdir hw1sub1 hw1sub2 hw1sub3
+cd hw1sub1
+touch text1.txt text2.txt text3.txt json1.json json2.json
+mkdir hw1 hw2 hw3
+ls -la
+echo ""!!!!!file text in script!!!!"" > testscript.txt
+cat testscript.txt
+mv /hw1/hwscript/hw1sub1/text1.txt /hw1/hwscript/hw1sub2
+mv /hw1/hwscript/hw1sub1/text2.txt /hw1/hwscript/hw1sub2
+cd ..
+ls -la"
